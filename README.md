@@ -36,6 +36,10 @@ A single-page fitness coaching site built with React, Vite, and Express. Its AI 
 
 The chat keeps its conversation in browser local storage. Use the clear button in the chat header to start over.
 
+## Deploy on Vercel
+
+The root `api/chat.js` file exposes the same chat handler as a Vercel serverless function, so production requests to `/api/chat` do not depend on the local Express server. In the Vercel project settings, add `OPENROUTER_API_KEY` and, optionally, `OPENROUTER_MODEL` under **Settings → Environment Variables**. Add them to the Production environment (and Preview if needed), then redeploy. Do not use a `VITE_` prefix for the API key.
+
 ## Quality checks
 
 ```sh
